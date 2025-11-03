@@ -1,1 +1,13 @@
+
 .env
+
+
+tournaments.json
+
+
+__pycache__/
+*.pyc
+
+
+/venv/
+/.venv/
