@@ -1,4 +1,4 @@
-# utils/data_manager.py
+
 import json
 import os
 
@@ -8,7 +8,7 @@ def load_data():
     if not os.path.exists(DATA_FILE):
         return {"active": None, "tournaments": {}}
     
-    # Adiciona verificação de arquivo vazio
+    
     if os.path.getsize(DATA_FILE) == 0:
         return {"active": None, "tournaments": {}}
         
@@ -16,7 +16,7 @@ def load_data():
         try:
             return json.load(f)
         except json.JSONDecodeError:
-            # Retorna um dict vazio se o JSON for inválido
+            
             return {"active": None, "tournaments": {}}
 
 def save_data(data):
