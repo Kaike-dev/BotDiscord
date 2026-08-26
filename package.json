@@ -1,0 +1,21 @@
+{
+  "name": "bot-discord-torneios",
+  "version": "2.0.0",
+  "description": "Bot de torneios para Discord em JavaScript e discord.js",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy:commands": "node src/deploy-commands.js",
+    "test": "node --test",
+    "check": "node --check src/index.js && node --check src/deploy-commands.js && node --check src/data/json-store.js && node --check src/commands/index.js && node --check src/commands/new-tournament.js && node --check src/commands/add-player.js && node --check src/commands/record-match.js && node --check src/commands/set-active.js && node --check src/commands/list-tournaments.js && node --check src/commands/show-table.js && node --check src/domain/standings.js && node --check src/utils/table.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "discord.js": "^14.27.0",
+    "dotenv": "^17.4.2"
+  }
+}

@@ -1,12 +1,16 @@
 services:
-  db:
-    container_name: BotDiscord
-    image: postgres
-    environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
-    ports:
-      - 5432:5432
+  bot:
+    build:
+      context: .
+    container_name: bot-discord-torneios
+    init: true
+    restart: unless-stopped
     env_file:
       - .env
+    environment:
+      NODE_ENV: production
+      DATA_FILE: /app/data/tournaments.json
+    volumes:
+      - type: bind
+        source: ./data
+        target: /app/data

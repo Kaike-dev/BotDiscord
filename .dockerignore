@@ -1,0 +1,17 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+
+node_modules
+coverage
+test
+*.log
+npm-debug.log*
+
+# O estado e montado em tempo de execucao e nunca deve entrar na imagem.
+data
+
+README.md
+docker-compose.yml
